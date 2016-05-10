@@ -12,6 +12,6 @@ int main(){
   node2.value=2;
   node.left=&node1;
   node.right=&node2;
-  printf("%d",node->left);
+  printf("%d\n",node.left->value);
   return 0;
 }
