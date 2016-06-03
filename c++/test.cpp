@@ -1,28 +1,28 @@
-#include<cstdio>
+#include <cstdio>
+#include <string>
+#include <cstring>
 
-int max=5;
+using namespace std;
 
-int f(int* a){
-  int n=0;
-  while(n<max){
-    printf("%d",a[n++]);
-  }
-  return 0;
-}
+struct node{
+  int value;
+  node *left,*right;
+};
 
 int main(){
-  int b[5]={1,2,3,4,5};
-
-  f(b);
-  int x=0,y=0;
-
-  for(int i=-1;i<=1;i++){
-    for(int j=-1;j<=1;j++){
-      if(((i==0||j==0)&&!(i==0&&j==0))){
-        printf("%d,%d\n",x+i,y+j);
-      }
-    }
+//  char a[100],b[100];
+  struct node temp={10,NULL,NULL};
+  struct node *seg=&temp;
+  for(int i=0;i<5;i++){
+    struct node the_node={i,&temp};
+    temp=the_node;
   }
+  for(int i=0;i<5;i++){
+    printf("%i:%d\n",i,seg->value);
+    seg=seg->left;
+  }
+//  scanf("%s %s",a,b);
+//  printf("%s\n%s\n",a,b);
+//  printf("%lu",strlen(a));
   return 0;
 }
-6 5 1 1 0 1 1 1 0 1 1 1 1 0 1 0 0 1 0 1 1 1 1 1 1 0 1 1 1 1 1 1 1
